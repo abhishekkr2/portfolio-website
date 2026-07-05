@@ -3,178 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio website</title>
+    <title>Abhishek Kumar — Backend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
     <div class="container">
 
-            <div class="sidebar">
-                <div class="profile">
-                   <img src="abhishek img.jpeg" alt="">
-                    <h2>Abhishek kumar</h2>
-                    <p>Backend Developer</p>
-                </div>
-           
+        <div class="sidebar">
+            <div class="profile">
+                <img src="abhishek img.jpeg" alt="Photo of Abhishek Kumar" loading="lazy">
+                <h2>Abhishek Kumar</h2>
+                <p class="role-tag">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    Backend Developer
+                </p>
+            </div>
 
+            <!-- terminal signature element -->
+            <div class="terminal" id="terminal" aria-hidden="true">
+                <div class="terminal-bar">
+                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    <span class="terminal-title">whoami.sh</span>
+                </div>
+                <div class="terminal-body" id="terminalBody"></div>
+            </div>
 
             <div class="contact">
                 <div class="email">
-                    <h3 class="label">Email:</h3>
-                    <a href="abhishekp4500@gmail.com" class="value">abhishekp4500@gmail.com</a>
+                    <h3 class="label">Email</h3>
+                    <div class="value-row">
+                        <a href="mailto:abhishekp4500@gmail.com" class="value" id="emailValue">abhishekp4500@gmail.com</a>
+                        <button class="copy-btn" data-copy="abhishekp4500@gmail.com" aria-label="Copy email address">copy</button>
+                    </div>
                 </div>
 
                 <div class="phone">
-                    <h3 class="label">phone:</h3>
-                    <a href="6299352323" class="value">62xxxxxx23</a>
+                    <h3 class="label">Phone</h3>
+                    <p class="value">62xxxxxx23</p>
                 </div>
                 <div class="location">
                     <h3 class="label">Location</h3>
-                    <p class="value">Saket,New Delhi</p>
+                    <p class="value">Saket, New Delhi</p>
                 </div>
-
             </div>
 
             <div class="social">
-                <a href=""><img src="https://simpleicons.org/icons/x.svg" alt=""></a>
-                 <a href="https://github.com/abhishekkr2" target="_blank"><img src="https://simpleicons.org/icons/github.svg" alt=""></a>
-                  <a href="https://www.linkedin.com/in/abhishek-kumar-961775290/" target="_blank"><img src="https://www.svgrepo.com/show/506517/linkedin.svg" alt=""></a>
+                <a href="https://github.com/abhishekkr2" target="_blank" rel="noopener" aria-label="GitHub"><img src="https://simpleicons.org/icons/github.svg" alt="GitHub"></a>
+                <a href="https://www.linkedin.com/in/abhishek-kumar-961775290/" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="https://www.svgrepo.com/show/506517/linkedin.svg" alt="LinkedIn"></a>
+                <a href="https://leetcode.com/u/PstK9b6kQB/" target="_blank" rel="noopener" aria-label="LeetCode"><img src="https://simpleicons.org/icons/leetcode.svg" alt="LeetCode"></a>
             </div>
         </div>
-        <div class="main-content"> 
+
+        <div class="main-content">
 
             <!-- navigation -->
-
-             <div id="navigation">
-                <nav>
-                    <a href="#about" class="active">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#education">Education</a>
-                    <a href="#portfolio">Portfolio</a>
-                
+            <div id="navigation">
+                <nav id="mainNav">
+                    <a href="#about" class="nav-link active" data-section="about">About</a>
+                    <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                    <a href="#education" class="nav-link" data-section="education">Education</a>
+                    <a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a>
                 </nav>
-               
-             </div>
-             <!-- about me -->
-              <div id="about">
-                <h2 class="heading">About </h2>
+                <div class="nav-progress" aria-hidden="true"><span id="navProgressBar"></span></div>
+            </div>
+
+            <!-- about me -->
+            <div id="about">
+                <h2 class="heading">About</h2>
                 <div class="line"></div>
-                <p class="content">I'm a pre-final year Computer Science undergraduate 
+                <p class="content">I'm a pre-final year Computer Science undergraduate
                     (graduating 2027) with a passion for building full-stack web applications
-                     from the ground up. My flagship project, DevTinder, is a MERN stack
-                      developer-matching platform that I designed, built, and deployed
-                       end-to-end — from schema design and authentication to production 
-                       infrastructure on AWS EC2 with Nginx and PM2, live at devtinder.quest.
+                    from the ground up. My flagship project, DevTinder, is a MERN stack
+                    developer-matching platform that I designed, built, and deployed
+                    end-to-end — from schema design and authentication to production
+                    infrastructure on AWS EC2 with Nginx and PM2, live at
+                    <a href="https://devtinder.quest" target="_blank" rel="noopener" class="inline-link">devtinder.quest</a>.
 
-                        I enjoy going beyond just "making it work" — digging into race conditions,
-                         security edge cases (JWT auth, Redis token blacklisting, NoSQL injection 
-                         prevention), and system design tradeoffs that most tutorials skip.</p>
-              </div>
+                    I enjoy going beyond just "making it work" — digging into race conditions,
+                    security edge cases (JWT auth, Redis token blacklisting, NoSQL injection
+                    prevention), and system design tradeoffs that most tutorials skip.</p>
 
-             <!--  skills -->
-               <div id="skills">
-                 <h2 class="skills">Skills </h2>
+                <div class="stats-row" id="statsRow">
+                    <div class="stat">
+                        <span class="stat-number" data-target="130" data-suffix="+">0</span>
+                        <span class="stat-label">Problems Solved</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="1" data-suffix="">0</span>
+                        <span class="stat-label">Production App</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="11" data-suffix="+">0</span>
+                        <span class="stat-label">Tools & Tech</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- skills -->
+            <div id="skills">
+                <h2 class="heading">Skills</h2>
                 <div class="line"></div>
                 <div class="grid-container">
-                    <div class="item">
-                        <img src="https://simpleicons.org/icons/html5.svg" alt="">
-                        <h3>HTML</h3>
-                    </div>
-                       <div class="item">
-                        <img src="https://simpleicons.org/icons/css.svg" alt="">
-                        <h3>CSS</h3>
-                    </div>
-                       <div class="item">
-                        <img src="https://simpleicons.org/icons/javascript.svg" alt="">
-                        <h3>Javascript</h3>
-                    </div>
-                       <div class="item">
-                        <img src="https://simpleicons.org/icons/react.svg" alt="">
-                        <h3>React</h3>
-                    </div>
-                       <div class="item">
-                        <img src="https://simpleicons.org/icons/git.svg" alt="">
-                        <h3>Git & github</h3>
-                    </div>
-                       <div class="item">
-                        <img src="https://simpleicons.org/icons/nodedotjs.svg" alt="">
-                        <h3>Node js</h3>
-                    </div>
-                    <div class="item">
-                        <img src="https://simpleicons.org/icons/express.svg" alt="">
-                        <h3>Express js</h3>
-                    </div>
-                    <div class="item">
-                        <img src="https://simpleicons.org/icons/mongodb.svg" alt="">
-                        <h3>Mongo Db</h3>
-                    </div>
-                    <div class="item">
-                        <img src="https://simpleicons.org/icons/mongoose.svg" alt="">
-                        <h3>Mongoose</h3>
-                    </div>
-                    <div class="item">
-                        <img src="aws-svgrepo-com.svg" alt="">
-                        <h3>AWS</h3>
-                    </div>
-                    <div class="item">
-                        <img src="https://simpleicons.org/icons/postman.svg" alt="">
-                        <h3>Postman</h3>
-                    </div>
+                    <div class="item"><img src="https://simpleicons.org/icons/html5.svg" alt="HTML"><h3>HTML</h3></div>
+                    <div class="item"><img src="https://simpleicons.org/icons/css.svg" alt="CSS"><h3>CSS</h3></div>
+                    <div class="item"><img src="https://simpleicons.org/icons/javascript.svg" alt="JavaScript"><h3>Javascript</h3></div>
+                    <div class="item"><img src="https://simpleicons.org/icons/react.svg" alt="React"><h3>React</h3></div>
+                    <div class="item"><img src="https://simpleicons.org/icons/git.svg" alt="Git"><h3>Git & Github</h3></div>
+                    <div class="item"><img src="https://simpleicons.org/icons/nodedotjs.svg" alt="Node.js"><h3>Node js</h3></div>
+                    <div class="item"><img src="https://simpleicons.org/icons/express.svg" alt="Express"><h3>Express js</h3></div>
+                    <div class="item"><img src="https://simpleicons.org/icons/mongodb.svg" alt="MongoDB"><h3>Mongo Db</h3></div>
+                    <div class="item"><img src="https://simpleicons.org/icons/mongoose.svg" alt="Mongoose"><h3>Mongoose</h3></div>
+                    <div class="item"><img src="aws-svgrepo-com.svg" alt="AWS"><h3>AWS</h3></div>
+                    <div class="item"><img src="https://simpleicons.org/icons/postman.svg" alt="Postman"><h3>Postman</h3></div>
                 </div>
-               </div>
+            </div>
 
-             <!-- education -->
-              <div id="education">
-                  <h2 class="education">Education </h2>
+            <!-- education -->
+            <div id="education">
+                <h2 class="heading">Education</h2>
                 <div class="line"></div>
                 <div class="edtech">
-
+                    <div class="liner"></div>
                     <div class="edfirst">
-                        <div class="year">2023-2027</div>
-                        <h3 class="degree">Bachelor of Information Technology</h3>
-                        <p class="college">Guru tegh Bahadur Institute of Technology</p>
-                        <p class="work">OverAll CGPA:7.50</p>
                         <div class="goal"></div>
+                        <div class="year">2023 – 2027</div>
+                        <h3 class="degree">Bachelor of Information Technology</h3>
+                        <p class="college">Guru Tegh Bahadur Institute of Technology</p>
+                        <p class="work">Overall CGPA: 7.50</p>
                     </div>
-                    <!-- <div class="edsecond">
-                        <div class="year">2027-2029</div>
-                        <h3 class="degree">Master in Information Technology</h3>
-                        <p class="college">Indraprast University</p>
-                        <p class="work">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem earum impedit sapiente labore in iusto ipsum, perferendis voluptates iste quasi nobis dolore consequatur nemo harum placeat culpa ut eaque quia perspiciatis? Repellat, numquam aperiam excepturi obcaecati quod deleniti quia atque necessitatibus saepe, neque fugiat voluptate? Quia aspernatur impedit recusandae animi.</p>
-                         <div class="goal"></div>
-                      
-                    </div> -->
-                    <!-- <div class="liner"></div> -->
                 </div>
-              </div>
-             <!-- portfolio -->
-              <div id="portfolio">
-                  <h2 class="heading">Portfolio </h2>
+            </div>
+
+            <!-- portfolio -->
+            <div id="portfolio">
+                <h2 class="heading">Portfolio</h2>
                 <div class="line"></div>
 
-                    <a href="https://leetcode.com/problemset/"class="project-link"> >
-                        <div class="project-container">
-                         <div class="project">
-                            <img src="demo.png" alt="">
-                            <div class="card">
-                                <h3>Dev-Tinder</h3>
-                                <p> DevTinder, is a MERN stack developer-matching platform that I designed,
-                                     built, and deployed end-to-end — from schema design and authentication
-                                      to production infrastructure on AWS EC2 with Nginx and PM2, live at
-                                       devtinder.quest.</p>
-                                <span>React</span><span>Node.js</span><span>Mongo Db</span><span>Express.js</span><span>Aws</span>
+                <div class="project-container">
+                    <a href="https://devtinder.quest" target="_blank" rel="noopener" class="project-link">
+                        <div class="project">
+                            <div class="project-image-wrap">
+                                <img src="demo.png" alt="DevTinder application preview" loading="lazy">
+                                <span class="live-badge"><span class="status-dot" aria-hidden="true"></span>Live</span>
                             </div>
-                         </div>
-                  
+                            <div class="card">
+                                <h3>DevTinder <span class="external-icon" aria-hidden="true">↗</span></h3>
+                                <p>DevTinder is a MERN stack developer-matching platform that I designed,
+                                    built, and deployed end-to-end — from schema design and authentication
+                                    to production infrastructure on AWS EC2 with Nginx and PM2, live at
+                                    devtinder.quest.</p>
+                                <span>React</span><span>Node.js</span><span>Mongo Db</span><span>Express.js</span><span>AWS</span>
+                            </div>
                         </div>
-                        </a>
-                    </div>
-
-              </div>
+                    </a>
+                </div>
+            </div>
 
         </div>
 
     </div>
-    
+
+    <script src="main.js"></script>
 </body>
 </html>
